@@ -4,3 +4,9 @@
     color: white;
     
 }
+
+.card {
+    width: 18rem;
+    background-color: rgb(145, 176, 158);
+    align-items: center;
+}
