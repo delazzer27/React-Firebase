@@ -6,8 +6,16 @@
 }
 
 .card {
-    width: 18rem;
-    background-color: rgb(145, 176, 158);
+    background-color: rgb(222, 225, 223);
     align-items: center;
 }
 
+.imgDetail {
+    height: 300px;
+    width: 450px;
+}
+
+.imgPequenia {
+    height: 100px;
+    width: 125px;
+}

@@ -20,7 +20,6 @@ const Counter =({stock, onAdd}) => {
 
   return (
     <div className='card'>
-        <h1>Counter</h1>
         <p> Stock: {stock} </p>
         <p> Cantidad: {count}</p>
         <div>

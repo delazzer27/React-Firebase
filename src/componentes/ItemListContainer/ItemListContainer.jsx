@@ -1,13 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import Counter from '../Counter';
 import productosData from '../data/productosData';
 import ItemList from '../ItemList/ItemList'
 
 
 const ItemListContainer = () => {
-    function onAdd (count)  {
-        console.log(`Se han adquirido ${count} productos`);
-    }
+
     const [productos, setProductos] = useState ([]);
     useEffect(() => {
         function consultarPromesa (confirmacion) {
@@ -28,8 +25,8 @@ const ItemListContainer = () => {
     
     return (
         <div>
-            <Counter stock = {10} onAdd = {onAdd}/>
             <ItemList catalogue={productos}/>
+
         </div>
     );
 }

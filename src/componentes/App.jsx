@@ -1,7 +1,6 @@
 
 import './App.css';
-import CartWidgets from './CartWidgets/CartWidgets';
-import Counter from './Counter';
+import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './ItemListContainer/ItemListContainer';
 import NavBar from './NavBar/NavBar';
 function App() {
@@ -10,6 +9,7 @@ function App() {
         <h1>Proyecto de React</h1>
         <NavBar/>
         <ItemListContainer/>
+        <ItemDetailContainer/>
     </div>
   );
 }
