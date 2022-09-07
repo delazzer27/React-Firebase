@@ -5,18 +5,21 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
-    const [productos, setProductos] = useState({})
+    const [productos, setProductos] = useState()
     const getProduct = () => new Promise((resolve, reject) => {
-        resolve (productosData.find(productos => productos.id === Number(id)))
+        setTimeout(()=>resolve (productosData.find(productos => productos.id === Number(id))), 2000)
     })
     useEffect(() => {
      getProduct()
      .then(response => setProductos(response))
     }, []);
     return (
-        <div>
-            <ItemDetail productos={productos}/>
-        </div>
+        <>
+          {
+            productos ? <ItemDetail productos={productos}/> : <h1>Cargando...</h1>
+        }
+        </>
+      
     );
 }
 

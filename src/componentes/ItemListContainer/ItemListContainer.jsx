@@ -26,15 +26,19 @@ const ItemListContainer = () => {
         .catch (error =>{
             console.error (error)
         })
+        return () => {
+            setProductos()
+        }
     }, [categoria]);
       
     
     
     return (
-        <div>
-            <ItemList catalogue={productos}/>
-
-        </div>
+        <>
+         {
+            productos ? <ItemList catalogue={productos}/> : <h1>Cargando...</h1>
+        } 
+        </>
     );
 }
 
