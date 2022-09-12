@@ -7,12 +7,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>Proyecto de React</h1>
         <NavBar/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>}/>
           <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
           <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>
+          <Route path='/cart' />
         </Routes>
     </div>
     </BrowserRouter>

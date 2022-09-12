@@ -1,12 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Counter from '../Counter';
 
-
-const ItemDetail = ({productos}) => {
-    function onAdd (count)  {
-        console.log(`Se han adquirido ${count} productos`);
-    }
-
+const ItemDetail = ({productos, onAdd}) => {
     return (
         <div style={{display: "flex"}}>
                 <div className="card mb-3">
@@ -20,7 +15,7 @@ const ItemDetail = ({productos}) => {
                     </div>
                 </div>
                 <div>
-                <Counter stock = {productos.stock} onAdd = {onAdd}/>
+                <Counter stock = {productos.stock} productos={productos} onAdd = {onAdd}/>
                 </div>
         </div>
     );

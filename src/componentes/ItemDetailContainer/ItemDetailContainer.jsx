@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
      getProduct()
      .then(response => setProductos(response))
-    }, []);
+    }, [id]);
     return (
         <>
           {
