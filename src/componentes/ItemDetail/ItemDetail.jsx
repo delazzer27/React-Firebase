@@ -1,7 +1,17 @@
-import React, {useContext} from 'react';
+import React, {useState, useContext}  from 'react';
 import Counter from '../Counter';
+import { CarritoContext } from '../context/CarritoContext';
 
-const ItemDetail = ({productos, onAdd}) => {
+
+const ItemDetail = ({productos}) => {
+    const {carrito, agregarProductoCarrito} =  useContext(CarritoContext);
+
+    function onAdd (productos, count)  {
+        const productoCarrito = {id: productos.id, count: count}
+        agregarProductoCarrito(productoCarrito)
+        console.log(carrito);
+    } 
+
     return (
         <div style={{display: "flex"}}>
                 <div className="card mb-3">

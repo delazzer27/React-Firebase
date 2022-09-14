@@ -10,8 +10,8 @@ const ItemDetailContainer = () => {
         setTimeout(()=>resolve (productosData.find(productos => productos.id === Number(id))), 2000)
     })
     useEffect(() => {
-     getProduct()
-     .then(response => setProductos(response))
+        getProduct()
+    .then(response => setProductos(response))
     }, [id]);
     return (
         <>

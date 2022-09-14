@@ -1,9 +1,8 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-import { useCarritoContext } from './context/CarritoContext';
+import Cart from './Cart/Cart';
 
-const Counter =({stock, productos}) => {
-    const {carrito, agregarProductoCarrito} =  useCarritoContext();
+const Counter =({stock, productos, onAdd}) => {
     const [count, setCount] = useState(1)
     function add () {
         if (count < stock) {
@@ -21,12 +20,6 @@ const Counter =({stock, productos}) => {
         setCount (1)
     }
 
-    function onAdd (productos, count)  {
-        const productoCarrito = {id: productos.id, count: count}
-        agregarProductoCarrito (productoCarrito)
-        console.log(carrito);
-    }
-
   return (
     <div className='card'>
         <p> Stock: {stock} </p>
@@ -37,10 +30,13 @@ const Counter =({stock, productos}) => {
             <button className='btn btn-dark' onClick={substract}> - </button>
         </div>
         <div>
-        <Link to="/cart" className="nav-link">
-            <button className='btn' onClick={()=> onAdd(productos, count)}> Comprar </button>
-            </Link>
+                <button className='btn' onClick={()=> onAdd(productos, count)} > Comprar </button>
+                {
+                    onAdd ? <Cart productos={productos} count={count}></Cart> : <h1>Error</h1>
+                }
+
         </div>
+
     </div>
   )
 }
