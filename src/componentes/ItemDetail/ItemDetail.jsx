@@ -7,7 +7,7 @@ const ItemDetail = ({productos}) => {
     const {carrito, agregarProductoCarrito} =  useContext(CarritoContext);
 
     function onAdd (productos, count)  {
-        const productoCarrito = {id: productos.id, count: count}
+        const productoCarrito = {...productos, count: count}
         agregarProductoCarrito(productoCarrito)
         console.log(carrito);
     } 

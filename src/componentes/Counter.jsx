@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-import Cart from './Cart/Cart';
+import CartView from './CartView/CartView';
+
 
 const Counter =({stock, productos, onAdd}) => {
     const [count, setCount] = useState(1)
@@ -30,11 +31,9 @@ const Counter =({stock, productos, onAdd}) => {
             <button className='btn btn-dark' onClick={substract}> - </button>
         </div>
         <div>
-                <button className='btn' onClick={()=> onAdd(productos, count)} > Comprar </button>
-                {
-                    onAdd ? <Cart productos={productos} count={count}></Cart> : <h1>Error</h1>
-                }
-
+            <Link to="/cart">
+            <button className='btn' onClick={()=> onAdd(productos, count)} > Comprar </button>
+            </Link>
         </div>
 
     </div>
