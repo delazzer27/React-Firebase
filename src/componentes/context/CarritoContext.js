@@ -24,11 +24,9 @@ const CarritoProvider = (props) => {
         }
     }
 
-    const quitarProductoCarrito = (productos) => {
-        const auxCarrito = carrito
-        let indice = auxCarrito.findIndex(prod => prod.id === productos.id)
-        auxCarrito.splice(indice, 1)
-        setCarrito(auxCarrito)
+    const quitarProductoCarrito = (id) => {
+        const newCarrito = [...carrito].filter (element=> element.id !== id)
+        setCarrito(newCarrito)
     }
 
     const limpiarCarrito = () => {
@@ -41,7 +39,7 @@ const CarritoProvider = (props) => {
     const totalProd = () =>{
         let total = 0;
         carrito.forEach((element)=> {
-            total +=(element.count*element.producto.precio)
+            total +=(element.count*element.precio)
         })
         return total;
     }

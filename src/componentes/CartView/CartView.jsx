@@ -5,16 +5,16 @@ const CartView = () => {
     const {carrito, quitarProductoCarrito, totalProd } = useContext(CarritoContext);
 
     return (
-        <div>
-             carrito.lenght !==0 ? (
+        
+            carrito.lenght !== 0 ? (
                 <div>
                     {carrito.map((element)=> (
                     <div className='cart-item-container'>
-                        <span>{element.productos.name}</span>
-                        <span>{element.productos.precio}</span>
-                        <img src={element.productos.img}></img>
-                        <span>cantidad:{element.productos.count} </span>
-                        <button onClick={()=>quitarProductoCarrito(element.productos.id)}>Eliminar</button>
+                        <span>{element.name}</span>
+                        <span> ${element.precio}</span>
+                        <img className="imgPequenia" src= {element.img}></img>
+                        <span>cantidad:{element.count} </span>
+                        <button onClick={()=>quitarProductoCarrito(element.id)}>Eliminar</button>
                     </div>
                      ))}
                 <div>
@@ -24,16 +24,16 @@ const CartView = () => {
                 </div>
              ) 
              : (
-                        <div>
-            <div className='cart-container'>
-                <h1>No hay productos en el carrito</h1>
-                <Link to="/categoria">
-                    <button className='button'>Seguir comprando</button>
-                </Link>
-            </div>
-        </div>
+                <div>
+                    <div className='cart-container'>
+                        <h1>No hay productos en el carrito</h1>
+                            <Link to="/">
+                             <button className='button'>Seguir comprando</button>
+                            </Link>
+                    </div>
+                </div>
              )
-        </div>
+
     );
 }
 
