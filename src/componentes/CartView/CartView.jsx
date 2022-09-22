@@ -6,7 +6,7 @@ const CartView = () => {
 
     return (
         
-            carrito.lenght !== 0 ? (
+            carrito.length !== 0 ? (
                 <div>
                     {carrito.map((element)=> (
                     <div className='cart-item-container'>
