@@ -19,7 +19,10 @@ const CartView = () => {
                      ))}
                 <div>
                     <h4>Precio Total: {totalProd()} </h4>
-                    <button>Confirmar compra</button>
+                    <Link to="/checkout">
+                        <button>Finalizar compra</button>
+                    </Link>
+                    
                 </div>
                 </div>
              ) 
