@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useContext} from 'react';
 import { CarritoContext } from '../context/CarritoContext';
 import { Link } from 'react-router-dom';
 const CartView = () => {
@@ -9,10 +9,10 @@ const CartView = () => {
             carrito.length !== 0 ? (
                 <div>
                     {carrito.map((element)=> (
-                    <div className='cart-item-container'>
+                    <div className='cart-item-container' key = {element.id}>
                         <span>{element.name}</span>
                         <span> ${element.precio}</span>
-                        <img className="imgPequenia" src= {element.img}></img>
+                        <img className="imgPequenia" src= {element.img} alt="imagen de producto"></img>
                         <span>cantidad:{element.count} </span>
                         <button onClick={()=>quitarProductoCarrito(element.id)}>Eliminar</button>
                     </div>

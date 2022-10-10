@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-import CartView from './CartView/CartView';
 
 
 const Counter =({stock, productos, onAdd}) => {

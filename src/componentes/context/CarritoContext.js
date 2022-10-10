@@ -17,7 +17,6 @@ const CarritoProvider = (props) => {
             setCarrito(auxCarrito)
             totalProd(auxCarrito)
         } else {
-            // const newCarrito = [...carrito, productos]
             auxCarrito.push(producto)
             setCarrito(auxCarrito)
             totalProd(auxCarrito)
@@ -47,7 +46,7 @@ const CarritoProvider = (props) => {
     const getCount = () => {
         let cantidad = 0;
         carrito.forEach((element) => {
-            cantidad += element.count;
+            cantidad += element.count
         });
         return cantidad
     }

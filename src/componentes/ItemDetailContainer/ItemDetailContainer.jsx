@@ -1,7 +1,6 @@
 import { doc, getDoc } from 'firebase/firestore';
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-// import productosData from '../data/productosData';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import db from '../../services/firebase';
 
@@ -9,13 +8,6 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     const [productos, setProductos] = useState()
     const [load, setLoad] = useState(true)
-    // const getProduct = () => new Promise((resolve, reject) => {
-    //     setTimeout(()=>resolve (productosData.find(productos => productos.id === Number(id))), 2000)
-    // })
-    // useEffect(() => {
-    //     getProduct()
-    // .then(response => setProductos(response))
-    // }, [id]);
 
     const getSelected = async(idItem) => {
         try {

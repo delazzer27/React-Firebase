@@ -6,15 +6,18 @@ import { Link } from 'react-router-dom';
 const CartWidgets = () => {
     const {carrito, getCount} = useContext(CarritoContext);
     return (
-        <>
+    carrito.length ==! 0 ? (
+        <div>
             <Link to="/cart">
-                <BiCart className='cart'/>
-                <span>{getCount}</span>
+                <div className='cart-item-container'>
+                    <BiCart className='cart'/>
+                    <span className='cantidad'>{getCount()}</span>
+                </div>
             </Link>
-        </>
-  
-        
-    );
+        </div>        
+    ) : (
+        <></>
+    ) );
 }
 
 export default CartWidgets;
